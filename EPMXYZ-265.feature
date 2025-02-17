@@ -23,3 +23,10 @@ Feature: Access Solutions Dropdown Menu
     Given I have opened the "Solutions" dropdown menu
     When I click on another navigation item
     Then the dropdown menu should close
+
+  Scenario: Invalid Option Navigation
+    Given I am on the homepage
+    When I click on the "Solutions" dropdown menu in the main navigation bar
+    And I click on a non-existent option "InvalidOption"
+    Then I should not be navigated to any section
+    And I should see an error message "Option not available"
